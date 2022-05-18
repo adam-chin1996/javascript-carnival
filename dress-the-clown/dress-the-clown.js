@@ -44,7 +44,7 @@ let clownParts = [0, 0, 0] // make an array of clown parts to choose from [head,
 function changeClownClothing(movement) {
   let position = clownParts[clothingIndex] // refactor variable and assign it to contain and access our clownPart index [0, 0, 0], which are equivalent to our head, body, and shoes selection
   let image = bodySelection[clothingIndex] // refactor variable and assign it to contain and access our stored images for each body part (head, body, shoes) within the array that we can rotate from
-  let string = strings[clothingIndex] // refactor variable and assign it to contain a string of keywords that our clothingIndex can access
+  let string = strings[clothingIndex] // refactor variable and assign it to contain a string of keywords that our clothingIndex can access which refer back to our bodySelection
 
   position += movement // declare the change in movement of our image on key press
 
@@ -57,7 +57,7 @@ function changeClownClothing(movement) {
   // concatenate our strings to access our image files
 
   let imageSrc = './images/' // variable for image file path
-  let stringSrc = string // variable to refer back to our strings array declared earlier
+  let stringSrc = string // variable to refer back to our strings array declared earlier to determine which body part and which clothing on that body part to rotate from
   let positionSrc = position // variable to refer to our matching [head, body, shoes] index
   let imageIdent = '.png' // variable to determine our image file source
   image.src = imageSrc.concat(stringSrc, positionSrc, imageIdent) // the concatenated image source location
